@@ -1,0 +1,45 @@
+<%- include('header') -%>
+
+  <div class="main-login-form">
+    <div class="login-form-label">
+      <h2>Login</h2>
+    </div>
+    <form class="login-form" action="/login" method="POST">
+      <input maxlength="30" minlength="5" required="true" name="email" class="username-input" type="text"
+        placeholder="username" />
+      <input maxlength="30" minlength="5" required="true" name="password" class="password-input" type="password"
+        placeholder="password" />
+      <button class="login-button">login</button>
+    </form>
+    <div class="divider">
+      <div class="line"></div>
+      <div class="or">Or</div>
+      <div class="line"></div>
+    </div>
+    <button class="google-login-button">
+      <div class="google-login-logo">
+        <img src="./google.svg" alt="" />
+      </div>
+
+      <!--Logout successfully-->
+      <% if (locals.logout){ %>
+        <div class="text-center">
+          <%= logout %>
+        </div>
+        <!--error message-->
+        <% }else if(locals.errorMessage){ %>
+          <div class="text-center">
+            <%= errorMessage %>
+          </div>
+          <!--unauthorize user-->
+          <% }else if(locals.unAuthorize){ %>
+            <div class="text-center">
+              <%= unAuthorize %>
+            </div>
+            <% }else{ %>
+              <div class="google-login-text">login using google</div>
+              <% } %>
+    </button>
+  </div>
+
+  <%- include('footer') -%>

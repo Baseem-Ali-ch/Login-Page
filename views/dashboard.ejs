@@ -1,0 +1,18 @@
+<%- include('header') -%>
+
+    <div class="container-fluid p-5 bg-dark">
+        <div class="">
+            <div class="col-md-6 offset-md-3 text-center">
+                <h1 class="display-4">Welcome to Dashboard</h1>
+                <p class="lead">
+                    <%= user || "admin@gmail.com" %>
+                </p>
+                <button type="button" class="btn btn-primary">
+                    <a href="/logout" class="text-white">Logout</a>
+                </button>
+            </div>
+        </div>
+    </div>
+
+
+    <%- include('footer') -%>
